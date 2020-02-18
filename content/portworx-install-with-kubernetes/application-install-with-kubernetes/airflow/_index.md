@@ -43,7 +43,7 @@ In this demo, we are using a development version of the helm chart, so it is not
 
 The following Helm command will create (or update) inside the _airflow_ namespace, a new [release]([https://github.com/helm/helm/blob/release-2.14/docs/glossary.md#release](https://github.com/helm/helm/blob/release-2.14/docs/glossary.md#release)) named `af`, which will form a airflow deployment (one web UI, one scheduler, and one postgres database instance):
 
-```cd airflow-kube-helm/airflow; helm upgrade --install --debug -f values.yaml --namespace airflow af ./```
+```cd airflow-kube-helm/airflow; helm dependecy update; helm upgrade --install --debug -f values.yaml --namespace airflow af ./```
 
 Shortly afterwards, a few new storageclasses (utilizing Portworx) will be created for the deployments mentioned above.
 
